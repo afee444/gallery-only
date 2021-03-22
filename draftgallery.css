@@ -206,7 +206,7 @@ padding: 12px 50px;
   transform: translate(-50%, -50%);
   padding: 2em;
   background: white;
-  color: #000;;
+  color: #000;
   border-radius: 15px;
 }
 .modal-window header {
@@ -230,6 +230,13 @@ padding: 12px 50px;
 }
 .modal-close:hover {
   color: black;
+}
+.content-lg{
+  transform: scale(1) !important;
+  text-align: center;
+}
+.content-lg > img{
+  height: 20rem;
 }
 
   
