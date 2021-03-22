@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+        <!-- This page is made by: Afreen Rumie -->
+    
+     <title>XpressMusik | Home</title>
+     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="draftfullpage.css">
+    <link rel="stylesheet" href="draftgallery.css">
+    <script>
+    filterSelection("all") // Execute the function and show all columns
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    m3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) m3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function m3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function m3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var galleryContainer = document.getElementById("mygalleryContainer");
+var gallerys = galleryContainer.getElementsByClassName("gallery");
+for (var i = 0; i < gallerys.length; i++) {
+  gallerys[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+} 
+
+function pagecolor(color){
+       document.body.style.backgroundColor = color;
+    }
+
+  /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+  var prevScrollpos =  window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("pres-wave-bar").style.top = "0";
+  } else {
+    document.getElementById("pres-wave-bar").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+
+
+
+
+</script>
+</head>
+
+
+
+<body>
+    <header>
+        <div id="header-pres-waveform" class="pres-waveform">    
+            <span class="pres-wave-bar" id="header-pres-wave-bar"></span>
+            <span class="pres-wave-bar" id="header-pres-wave-bar"></span>
+            <span class="pres-wave-bar" id="header-pres-wave-bar"></span>
+            <span class="pres-wave-bar" id="header-pres-wave-bar"></span>
+            <span class="pres-wave-bar" id="header-pres-wave-bar"></span>
+            <span class="pres-wave-bar" id="header-pres-wave-bar"></span>
+            <span class="pres-wave-bar" id="header-pres-wave-bar"></span>
+        </div>
+        <nav>
+            <ul class="header-navigation-links">
+                <li><a href="/html/main.html">Home</a></li>
+                <li><a href="/html/store.html">Store</a></li>
+                <li><a href="/html/quiz.html">Gallery</a></li>
+                <li><a href="/html/gallery.html">Quiz</a></li>
+                <li><a href="/html/site-map.html">Site Map</a></li>
+                <li><a href="/html/contact-us.html">Contact Us</a></li>
+                <li><a href="/html/about-us.html">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="header-ddl-site-theme">
+            <a class="button-style-1 common-button" href="#temp-login-link" onchange="pagecolor(getElementById('pcolor').value);"><button type="button">Theme</button></a>
+        </div>
+
+        <!-- <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#">HTML</a></li>
+              <li><a href="#">CSS</a></li>
+              <li><a href="#">JavaScript</a></li>
+            </ul>
+          </div>
+        -->
+    </header>
+
+<div id="mygalleryContainer">
+  <button class= "gallery active" onclick="filterSelection('all')"> Show all</button>
+  <button class="gallery" onclick="filterSelection('International')"> International</button>
+  <button class="gallery" onclick="filterSelection('Classic')"> Classic</button>
+  <button class="gallery" onclick="filterSelection('KPop')"> KPop</button>
+  <button class="gallery" onclick="filterSelection('Jazz')"> Jazz</button>
+  <button class="gallery" onclick="filterSelection('Indie')"> Indie</button>
+  <button class="gallery" onclick="filterSelection('SinhalaMix')"> SinhalaMix</button>
+  <button class="gallery" onclick="filterSelection('Bollywood')"> Bollywood</button>
+  
+</div>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column International">
+    <div class="content">
+      <img src ="https://i.scdn.co/image/ab67706f000000031a2078af3c3899d44c356e14" alt="New Music Friday" alt="jb" style="width:100%">
+      <h3>Nick Jonas</h3>
+      <br>
+      <p>Nicholas Jerry Jonas is an American singer, songwriter and actor. Jonas began acting in theater at the age of seven, and released his debut single in 2002 which caught the attention of Columbia Records where Jonas formed a band with his older brothers, Joe and Kevin, known as the Jonas Brothers. </p>
+    </div>
+  </div>
+  <div class="column International">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67616d00001e028b11b0be988e17da2799b94d"  alt="Revelación - EP"  style="width:100%">
+      <h3>Selena Gomez </h3>
+      <br>
+      <p>Selena Marie Gomez is an American singer, actress, and producer. Born and raised in Texas, Gomez began her career by appearing on the children's television series Barney & Friends.</p>
+    </div>
+  </div>
+  <div class="column International">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67616d00001e02bc2dd68b840bb48db3177046" alt="Hold on" style="width:100%">
+      <h3>Justin Beiber </h3>
+      <br>
+      <p>Justin Drew Bieber is a Canadian singer, songwriter and multi-instrumentalist. Bieber was signed to RBMG Records in 2008. With Bieber's debut EP My World, released in late 2009, Bieber became the first artist to have seven songs from a debut record chart on the Billboard Hot 100.</p>
+    </div>
+  </div>
+  <div class="column International">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67616d00001e02877ea8fa223c26f19aaef92d"  alt= "Taylorswift" style="width:100%">
+      <h3>Taylor Swift </h3>
+      <br>
+      <p>Taylor Alison Swift is an American singer-songwriter. Her narrative songwriting, which often takes inspiration from her personal life, has received widespread critical praise and media coverage. Born in West Reading, Pennsylvania, Swift relocated to Nashville, Tennessee, in 2004 to pursue a career in country music.</p>
+    </div>
+  </div>
+  <div class="column Classic">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67616d00001e028694e8cacaea8f30e988b96c" alt="mkwp" style="width:100%">
+      <h3>MKTO</h3>
+      <br>
+      <p>MKTO is an American pop duo, consisting of Malcolm Kelley and Tony Oller. Their self-titled album was released on 30 January 2014 by Columbia Records. In July 2015, the duo released their first extended play, titled Bad Girls EP.</p>
+    </div>
+  </div>
+  <div class="column Classic">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67616d00001e021933ad97001ad40057db4838" alt="Andrian Gurvitz" style="width:100%">
+      <h3>Andrian Gurvitz</h3>
+      <br>
+      <p>Adrian Curtis Gurvitz is an English singer, songwriter, musician and record producer. His prolific songwriting ability has gained him hits on the Grammy Award-winning soundtrack The Bodyguard, Eddie etc</p>
+    </div>
+  </div>
+  <div class="column Classic">
+    <div class="content">
+      <img src="https://i.scdn.co/image/ab67616d00001e02ccb14f1bd65cb6262feabc34" alt="Jidenna" style="width:100%">
+      <h3>Jidenna</h3>
+      <br>
+      <p>Jidenna Theodore Mobisson, better known mononymously as Jidenna, is a Nigerian-American rapper, singer, songwriter, and record producer. In 2015, Jidenna released two singles, "Classic Man" and "Yoga", promoting Janelle Monáe's label Wondaland Records' compilation EP The Eephus with Epic Records.</p>
+    </div>
+  </div>
+
+  <div class="column Classic">
+    <div class="content">
+      <img src="https://i.scdn.co/image/ab67616d00001e020598422deea07432ce26f94d" alt="Jidenna" style="width:100%">
+      <h3>Jidenna</h3>
+      <br>
+      <p>Jidenna Theodore Mobisson, better known mononymously as Jidenna, is a Nigerian-American rapper, singer, songwriter, and record producer. In 2015, Jidenna released two singles, "Classic Man" and "Yoga", promoting Janelle Monáe's label Wondaland Records' compilation EP The Eephus with Epic Records.</p>
+    </div>
+  </div>
+
+  <div class="column KPop">
+    <div class="content">
+      <img src=https://i.scdn.co/image/ab67706f000000033b0261106e3dbb503b7de5cf alt="KPop" style="width:100%">
+      <h3>Blackpink</h3>
+      <br>
+      <p>Blackpink is a South Korean girl group formed by YG Entertainment, consisting of members Jisoo, Jennie, Rosé, and Lisa.</p>
+    </div>
+  </div>
+  <div class="column KPop">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67616d00001e0229d00196831bec20ebbff5c7" alt="KPop1" style="width:100%">
+      <h3>BTS</h3>
+      <br>
+      <p>BTS, also known as the Bangtan Boys, is a seven-member South Korean boy band that began formation in 2010 and debuted in 2013 under Big Hit Entertainment. The septet—composed of RM, Jin, Suga, J-Hope, Jimin, V, and Jungkook—co-writes and co-produces much of their own output./p>
+    </div>
+  </div>
+  <div class="column KPop">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67706f00000003d243bddce4d67f4e315285ee" alt="KPOP2" style="width:100%">
+      <h3>Korean OST</h3>
+      <br>
+      <p>Original soundtrack from famous korean dramas</p>
+    </div>
+  </div>
+  <div class="column KPop">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67706f000000039e0389cc36b165e6851f44e2" alt="KPOP3" style="width:100%">
+      <h3>K-pop Daebak </h3>
+      <br>
+      <p>Score all the hottest hits from your favourite hallyu star and check out your one true K-Pop playlist! </p>
+    </div>
+  </div>
+  <div class="column Jazz">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67616d00001e02f38c6b37a21334e22005b1f7" alt="Jazz1" style="width:100%">
+      <h3>A Tribe Called Quest</h3>
+      <br>
+      <p>A Tribe Called Quest was an American hip hop group formed in St. Albans, Queens, New York in 1985, originally composed of rapper and main producer Q-Tip, rapper Phife Dawg, DJ and co-producer Ali Shaheed Muhammad, and rapper Jarobi White. The group is regarded as a pioneer of alternative hip hop music.</p>
+    </div>
+  </div>
+  <div class="column Jazz">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67616d00001e0272026b46b77ad6036cfb62ea" alt="Jazz2" style="width:100%">
+      <h3>KID KID KIO</h3>
+      <br>
+      <p>Kid Kio - Somewhere New. Release date: June 15, 2020 (9 months ago) About SubmitHub. SubmitHub was started in late-2015 by music blogger Jason Grishkoff (Indie Shuffle). Its mission is to efficiently and transparently connect artists with curators.</p>
+    </div>
+  </div>
+  <div class="column Jazz">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67616d00001e020b4cee06b42eb948e911e5a1" alt="Jazz3" style="width:100%">
+      <h3>Jazz Classic</h3>
+      <br>
+      <p>Jazz is a music genre that originated in the African-American communities of New Orleans, Louisiana, United States, in the late 19th and early 20th centuries</p>
+    </div>
+  </div>
+  <div class="column Jazz">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67616d00001e02daad43181b89781003662093" alt="jazz4" style="width:100%">
+      <h3>Leah Kate</h3>
+      <br>
+      <p>Leah Kate is a rising independent pop artist who's music feels like the 90's has met the 2020's.</p>
+    </div>
+  </div>
+  <div class="column Indie">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67706f00000003d2789b816dfcdc308c56fb33" alt="indie3" style="width:100%">
+      <h3>Leah Kate</h3>
+      <br>
+      <p>Leah Kate is a rising independent pop artist who's music feels like the 90's has met the 2020's.</p>
+    </div>
+  </div>
+  <div class="column Indie ">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67616d00001e0292354800b6b8394593c2f1e0" alt="indie4" style="width:100%">
+      <h3>Lady A</h3>
+      <br>
+      <p>Lady A is an American country music group formed in Nashville, Tennessee in 2006. The group is composed of Hillary Scott, Charles Kelley, and Dave Haywood. Scott is the daughter of country music singer Linda Davis, and Kelley is the brother of pop singer Josh Kelley</p>
+    </div>
+  </div>
+  <div class="column Indie">
+    <div class="content">
+      <img src= https://i.scdn.co/image/ab67616d00001e0254fde12da9026b8f1695b366 alt="indie7" style="width:100%">
+      <h3>Indie rock</h3>
+      <br>
+      <p>Indie rock is a genre of rock music that originated in the United States and United Kingdom in the 1970s. Originally used to describe independent record labels, the term became associated with the music they produced and was initially used interchangeably with alternative rock or "guitar pop rock".</p>
+    </div>
+  </div>
+  <div class="column Indie">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67616d00001e0256c9449afd5b56e0e72cf8eb" alt="indie2" style="width:100%">
+      <h3>Warm </h3>
+      <br>
+
+      <p>Indie rock is a genre of rock music that originated in the United States and United Kingdom in the 1970s. Originally used to describe independent record labels, the term became associated with the music they produced and was initially used interchangeably with alternative rock or "guitar pop rock".</p>
+    </div>
+  </div>
+
+  <div class="column SinhalaMix">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67616d00001e02020ea280eb54b6ca772afa3c" alt="indie7" style="width:100%">
+      <h3>Danith Sri/h3>
+      <br>
+      <p>Dhanith released singles such as "Jeewithe" and "Obe As" when he was a teenager and was also a very good dancer, a talent he showcased in his music videos back in the day.</p>
+    </div>
+  </div>
+  <div class="column SinhalaMix">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67616d00001e0245b3ecb579818e117108700e" alt="indie7" style="width:100%">
+      <h3>Costa</h3>
+      <br>
+      <p>A rapper/Label Executive/producer/vocalist/beatmaker hailing from the hill capital, Kandy, COSTA (God Made This Beat) has turned into more or less a household name with the Sinhala & English Hip Hop/Rap Music community in Sri Lanka.</p>
+    </div>
+  </div>
+  <div class="column SinhalaMix">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67616d00001e0221f12f03a15fb1ca26312651" alt="indie7" style="width:100%">
+      <h3>BnS</h3>
+      <br>
+      <p>Bathiya & Santhush, also known as BNS, are a Sri Lankan pop duo consisting of Bathiya Jayakody and Santhush Weeraman, who met while at the "Mary Anne David School of Vocal Music" in Colombo. They both were born in Colombo, Sri Lanka.</p>
+    </div>
+  </div>
+  <div class="column SinhalaMix">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67616d00001e02267a89fc6d620b56c278c1ec" alt="indie7" style="width:100%">
+      <h3>Sanuka</h3>
+      <br>
+      <p>Sri Lankan singer known for songs like "Kirula Muthu Lihi", "Api Katha Nokara Imu" and "Nil Ahasath Ralu Polawath". His band is called Wayo, and he is represented by Singha Records.</p>
+    </div>
+  </div>
+  <div class="column Bollywood">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67616d00001e027569cbe3695608074d9fd389" alt="indie7" style="width:100%">
+      <h3>Arjith Singhe</h3>
+      <br>
+      <p>Arijit Singh is an Indian singer and music composer. He sings predominantly in Hindi and Bengali but has also performed in various other Indian languages. He is the recipient of a National Award and a record six Filmfare Awards</p>
+    </div>
+  </div>
+  <div class="column Bollywood">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67706f000000039622019fca52c90408a5068a" alt="indie7" style="width:100%">
+      <h3>Shreya Ghosal</h3>
+      <br>
+      <p>Shreya Ghoshal is an Indian playback singer, songwriter, composer and music producer. She has received four National Film Awards, four Kerala State Film Awards, two Tamil Nadu State Film Awards, seven Filmfare Awards and ten Filmfare Awards South. </p>
+    </div>
+  </div>
+  <div class="column Bollywood">
+    <div class="content">
+      <img src= "https://i.scdn.co/image/ab67706f000000032a6daa37abae1ecb241adc0b" alt="indie7" style="width:100%">
+      <h3>A. R. Rahman</h3>
+      <br>
+      <p>Allahrakha Rahman, known professionally as A. R. Rahman, is an Indian film composer, record producer, singer, and songwriter who works predominantly in Tamil and Hindi films. In 2010, the Indian government awarded him the Padma Bhushan, the nation's third-highest civilian award</p>
+    </div>
+  </div>
+  <div class="column Bollywood">
+    <div class="content">
+      <img src= "https://thisis-images.scdn.co/37i9dQZF1DZ06evO2LGesn-large.jpg" alt="indie7" style="width:100%">
+      <h3>Armaan Malik</h3>
+      <br>
+      <p>Armaan Malik is an Indian singer, songwriter, record producer, voice-over, performer and actor. He is known for his singing in multiple languages, including Hindi, English, Bengali, Telugu, Marathi, Tamil, Gujarati, Urdu, Malayalam, Kannada. He also sung in many Indian languages</p>
+    </div>
+  </div>
+
+
+  
+
+<!-- END GRID -->
+</div>
+
+</body>
+</html>
